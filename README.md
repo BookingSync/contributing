@@ -6,7 +6,7 @@ We'd love to see you contributing to your projects, please just follow a few con
 
 - Two spaces, no tabs (for indentation).
 - No trailing whitespace. Blank lines should not have any spaces.
-- Indent after private/protected.
+- Do not indent after private/protected.
 - Use Ruby >= 1.9 syntax for hashes. Prefer `{ a: :b }` over `{ :a => :b }`.
 - Prefer `&&`/`||` over and/or.
 - Prefer `class << self` over `self.method` for class methods.
@@ -24,7 +24,7 @@ We code following this style guides:
 
 ## Submiting Pull Requests
 
-- **Fork away** (not required for BookingSync developer team)
+- **Fork away** (not required for BookingSync developer team).
 - **Create topic branches.** Don't ask us to pull from your master branch.
 - **Pull Requests against staging branches.** That's certainly the default behavior on our projects, but if a staging branch is present, base on Pull Requests on it.
 - **Add tests!** Make sure that your patch is including tests.
