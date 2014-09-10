@@ -31,4 +31,11 @@ We code following this style guides:
 - **Document any change in behaviour.** Make sure the README and any other relevant documentation are kept up-to-date.
 - **Send coherent history.** Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please squash them before sending them to us.
 
+**Note:** In some cases, you might want to submit pull requests for review even before your are done. You might also have pull requests with multiple tasks and progress tracking can be good to share with the rest of the team. In this cases, make a Pull Request early and prefix the subject with `[WIP] `. Pull Requests comments are great to track items completed and left to be done, by using:
+
+```
+- [x] Completed super feature
+- [ ] Super feature to be done
+```
+
 Happy Coding <3
