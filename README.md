@@ -5,6 +5,7 @@ We'd love to see you contributing to your projects, please just follow a few con
 ## Coding conventions
 
 - Two spaces, no tabs (for indentation).
+- Keep lines fewer than 100 characters.
 - No trailing whitespace. Blank lines should not have any spaces.
 - Do not indent after private/protected.
 - Use Ruby >= 1.9 syntax for hashes. Prefer `{ a: :b }` over `{ :a => :b }`.
@@ -21,6 +22,19 @@ We code following this style guides:
 - [http://betterspecs.org/](http://betterspecs.org/)
 - [https://github.com/polarmobile/coffeescript-style-guide](https://github.com/polarmobile/coffeescript-style-guide)
 - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
+
+## Extra Ruby Coding Style
+
+A method with single argument, feels right without parenthesis but when passing a variable plus a hash or other "complexe" calls, use parenthesis.
+
+```ruby
+# Bad
+create :foo, bar: baz
+
+# Good
+create :foo
+create(:foo, bar: baz)
+```
 
 ## Submiting Pull Requests
 
