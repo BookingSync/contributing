@@ -36,6 +36,10 @@ create :foo
 create(:foo, bar: baz)
 ```
 
+# Extra Specs Coding Style
+
+- Add a blank line between `let` and `before`.
+
 ## Submiting Pull Requests
 
 - **Fork away** (not required for BookingSync developer team).
