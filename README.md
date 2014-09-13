@@ -25,7 +25,7 @@ We code following this style guides:
 
 ## Extra Ruby Coding Style
 
-A method with single argument, feels right without parenthesis but when passing a variable plus a hash or other "complexe" calls, use parenthesis.
+A method with similar arguments feels right without parenthesis but when passing multiple types ones, please use parenthesis.
 
 ```ruby
 # Bad
@@ -34,6 +34,7 @@ create :foo, bar: baz
 # Good
 create :foo
 create(:foo, bar: baz)
+my_method foo, bar
 ```
 
 # Extra Specs Coding Style
