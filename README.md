@@ -25,6 +25,8 @@ We code following this style guides:
 
 ## Extra Ruby Coding Style
 
+### Methods parenthesis
+
 A method with similar arguments feels right without parenthesis but when passing multiple types ones, please use parenthesis.
 
 ```ruby
@@ -35,6 +37,21 @@ create :foo, bar: baz
 create :foo
 create(:foo, bar: baz)
 my_method foo, bar
+```
+
+### Chaining over multiple lines
+
+You would often want to question yourself if a new method is not best, but if needed,
+here's the preferred way to chain methods over multiple lines.
+
+```ruby
+# Bad
+long_line_under_100_chars.
+chained_method()
+
+# Good
+long_line_under_100_chars
+  .chained_method()
 ```
 
 # Extra Specs Coding Style
