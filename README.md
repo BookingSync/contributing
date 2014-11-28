@@ -1,6 +1,6 @@
 # Contributing to BookingSync projects
 
-We'd love to see you contributing to your projects, please just follow a few conventions.
+We'd love to see you contributing to our projects, please just follow a few conventions.
 
 ## Coding conventions
 
@@ -63,6 +63,7 @@ long_line_under_100_chars
 - **Fork away** (not required for BookingSync developer team).
 - **Create topic branches.** Don't ask us to pull from your master branch.
 - **Pull Requests against staging branches.** That's certainly the default behavior on our projects, but if a staging branch is present, base on Pull Requests on it.
+- **Migrations.** Make sure to prefix the title with `[migrate]` and add only those changes that are essential for the app to pass tests after migrating. You will have to open a second PR with the rest of your code.
 - **Add tests!** Make sure that your patch is including tests.
 - **Document any change in behaviour.** Make sure the README and any other relevant documentation are kept up-to-date.
 - **Send coherent history.** Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please squash them before sending them to us.
