@@ -13,6 +13,7 @@ We'd love to see you contributing to our projects, please just follow a few conv
 - Prefer `class << self` over `self.method` for class methods.
 - Use `a = b` and not `a=b`.
 - Prefer `method { do_stuff }` instead of `method{do_stuff}` for single-line blocks.
+- Prefer double quotes `"` instead of single quotes `'` for strings.
 
 ## Style guides
 
