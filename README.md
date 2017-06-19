@@ -13,7 +13,11 @@ We'd love to see you contributing to our projects, please just follow a few conv
 - Use `and`/`or` only for the early returns:
 ``` ruby
 def some_method_with_and
-  head 401 and return
+  if unathorized_request?
+    head 401 and return
+  end
+
+  render :index
 end
 
 def some_method_with_or(user)
