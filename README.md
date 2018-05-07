@@ -58,6 +58,40 @@ long_line_under_100_chars
 # Extra Specs Coding Style
 
 - Add a blank line between `let` and `before`.
+- Group specs around the described object's public methods. Use `describe "#method_name` for instance methods and `describe ".method_name"` for class methods.
+- Context setup does not belong to the `it` block, that's the place for the assert.
+- Context description should always start like `context "when ..."` or `context "and ..."`
+- When you see `it "returns foo when baz is true"` it means you're missing a `context "when baz is true"`
+- Prefer `build_stubbed` over `build` over `create` whenever possible. Helps keep spec suite fast, encourages DI, can prevent N+1 queries just by making you aware of DB queries.
+- When writing factories, don't specify more than what's needed to pass validation, put the more detailed stuff under well named traits.
+- Don't use random values in the factories, that can make specs flaky.
+- Explicitly specify in the context setup everything that is needed for the assert to pass, don't rely on factory defaults. This makes the context more transparent, factories flexible and specs more easily refactorable.
+- Use the following as a rule of thumb for context setup. If you can't follow it, stop for a second and think about your object's API, maybe the problem is there.
+
+```ruby
+# after describe the first is always the subject
+describe "#foo"
+  subject(:foo) { bar.foo }
+
+# then lets follow in the order they will be called when subject is invoked
+let(:bar) { Bar.new(baz, qux) }
+let(:baz) { build :baz, cruz: cruz }
+let(:cruz) { build :cruz }
+let(:gux) { build :gux, cruz: cruz }
+
+# let! follows with their lets
+let!(:corge) { create :corge, grault: grault }
+let(:grault) { create :grault }
+let!(:garply) { create :garply, grault: grault }
+
+# Then the hooks grouped by scope and ordered by execution
+before :all
+around :all
+after :all
+before :each
+around :each
+after :each
+```
 
 ## Submiting Pull Requests
 
