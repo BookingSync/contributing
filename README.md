@@ -65,24 +65,24 @@ long_line_under_100_chars
 describe "#foo"
   subject(:foo) { bar.foo }
 
-# then lets follow in the order they will be called when subject is invoked
-let(:bar) { Bar.new(baz, qux) }
-let(:baz) { build :baz, cruz: cruz }
-let(:cruz) { build :cruz }
-let(:gux) { build :gux, cruz: cruz }
+  # then lets follow in the order they will be called when subject is invoked
+  let(:bar) { Bar.new(baz, qux) }
+  let(:baz) { build :baz, cruz: cruz }
+  let(:cruz) { build :cruz }
+  let(:gux) { build :gux, cruz: cruz }
 
-# let! follows with their lets
-let!(:corge) { create :corge, grault: grault }
-let(:grault) { create :grault }
-let!(:garply) { create :garply, grault: grault }
+  # let! follows with their lets
+  let!(:corge) { create :corge, grault: grault }
+  let(:grault) { create :grault }
+  let!(:garply) { create :garply, grault: grault }
 
-# Then the hooks grouped by scope and ordered by execution
-before :all
-around :all
-after :all
-before :each
-around :each
-after :each
+  # Then the hooks grouped by scope and ordered by execution
+  before :all
+  around :all
+  after :all
+  before :each
+  around :each
+  after :each
 ```
 
 ## Submiting Pull Requests
