@@ -9,7 +9,21 @@ We'd love to see you contributing to our projects, please just follow a few conv
 - No trailing whitespace. Blank lines should not have any spaces.
 - Do not indent after private/protected.
 - Use Ruby >= 1.9 syntax for hashes. Prefer `{ a: :b }` over `{ :a => :b }`.
-- Prefer `&&`/`||` over and/or.
+- Prefer `&&`/`||` over `and`/`or`.
+- Use `and`/`or` only for the early returns:
+``` ruby
+def some_method_with_and
+  if unathorized_request?
+    head 401 and return
+  end
+
+  render :index
+end
+
+def some_method_with_or(user)
+  user.admin? or raise UnauthorizedRequestError
+end
+```
 - Prefer `class << self` over `self.method` for class methods.
 - Use `a = b` and not `a=b`.
 - Prefer `method { do_stuff }` instead of `method{do_stuff}` for single-line blocks.
