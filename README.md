@@ -31,12 +31,16 @@ end
 
 ## Style guides
 
-We code following this style guides:
+We code following these style guides:
 
 - [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby)
 - [http://betterspecs.org/](http://betterspecs.org/)
 - [https://github.com/polarmobile/coffeescript-style-guide](https://github.com/polarmobile/coffeescript-style-guide)
 - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
+
+## Static code analyzer
+
+We are using Rubocop wrapped in [this gem](https://github.com/BookingSync/bookingsync-stylecheck) to ensure consistency amongst our projects.
 
 ## Extra Ruby Coding Style
 
