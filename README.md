@@ -76,6 +76,32 @@ long_line_under_100_chars
 # Extra Specs Coding Style
 
 - Add a blank line between `let` and `before`.
+- Use the following as a rule of thumb for context setup. If you can't follow it, stop for a second and think about your object's API, maybe the problem is there.
+
+```ruby
+# after describe the first is always the subject
+describe "#foo"
+  subject(:foo) { bar.foo }
+
+  # then lets follow in the order they will be called when subject is invoked
+  let(:bar) { Bar.new(baz, qux) }
+  let(:baz) { build :baz, cruz: cruz }
+  let(:cruz) { build :cruz }
+  let(:gux) { build :gux, cruz: cruz }
+
+  # let! follows with their lets
+  let!(:corge) { create :corge, grault: grault }
+  let(:grault) { create :grault }
+  let!(:garply) { create :garply, grault: grault }
+
+  # Then the hooks grouped by scope and ordered by execution
+  before :all
+  around :all
+  after :all
+  before :each
+  around :each
+  after :each
+```
 
 ## Submiting Pull Requests
 
