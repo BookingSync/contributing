@@ -79,17 +79,18 @@ long_line_under_100_chars
 - Use the following as a rule of thumb for context setup. If you can't follow it, stop for a second and think about your object's API, maybe the problem is there.
 
 ```ruby
-# after describe the first is always the subject
+# after describe the first is always the subject, called the same as the described method.
+# For controller specs use get_index, get_show, patch_update, post_create, delete_destroy, etc.
 describe "#foo"
   subject(:foo) { bar.foo }
 
-  # then lets follow in the order they will be called when subject is invoked
+  # then "let"s follow in the order they will be called when subject is invoked
   let(:bar) { Bar.new(baz, qux) }
   let(:baz) { build :baz, cruz: cruz }
   let(:cruz) { build :cruz }
   let(:gux) { build :gux, cruz: cruz }
 
-  # let! follows with their lets
+  # "let!" follows with their "let"s
   let!(:corge) { create :corge, grault: grault }
   let(:grault) { create :grault }
   let!(:garply) { create :garply, grault: grault }
