@@ -76,6 +76,7 @@ long_line_under_100_chars
 # Extra Specs Coding Style
 
 - Add a blank line between `let` and `before`.
+- Prefer `ModelKlass.new` over `build_stubbed` over `build` over `create` for optimal performance.
 - Use the following as a rule of thumb for context setup. If you can't follow it, stop for a second and think about your object's API, maybe the problem is there.
 
 ```ruby
